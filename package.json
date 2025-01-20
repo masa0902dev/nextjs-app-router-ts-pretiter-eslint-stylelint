@@ -1,5 +1,9 @@
 {
   "name": "nextjs-ts-prettier-eslint-stylelint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masa0902dev/nextjs-app-router-ts-pretiter-eslint-stylelint.git"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
