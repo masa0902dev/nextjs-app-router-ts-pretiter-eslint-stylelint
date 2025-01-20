@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextJS App Router Starter with TypeScript, Prettier, ESLint, and Stylelint
 
-## Getting Started
+This is a boilerplate for starting a Next.js project with the App Router feature enabled.  
+The project is preconfigured with TypeScript, Prettier, ESLint, and Stylelint to provide a foundation for building NextJS project.
 
-First, run the development server:
+## formatter, linter
+
+Prettier: Automated code formatting.
+ESLint: Linting for ts, tsx files.
+Stylelint: Linting for css,scss,module.scss files.
+
+## Installation
+
+Clone this repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/masa0902dev/nextjs-app-router-ts-pretiter-eslint-stylelint.git
+cd nextjs-app-router-ts-pretiter-eslint-stylelint
+
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## npm Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project includes the following npm scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **dev**: Starts the development server using Next.js with TurboPack on port 3001.
 
-## Learn More
+   ```bash
+   echo 'this is test repo, using port 3001' && next dev --turbopack -p 3001
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **build**: Checks the code formatting with Prettier, lints the styles with Stylelint, and builds the Next.js application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   prettier --check . && stylelint --allow-empty-input "**/*.{css,scss}" && next build
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **start**: Starts the production server for the Next.js application.
 
-## Deploy on Vercel
+   ```bash
+   next start
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **format**: Formats the code using Prettier and echoes a completion message.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   prettier --write . && echo '\nPrettier Finished'
+   ```
+
+5. **lint:es**: Lints the JavaScript/TypeScript code using ESLint and automatically fixes issues.
+
+   ```bash
+   next lint --fix && echo '\nESLint Finished'
+   ```
+
+6. **lint:style**: Lints the styles using Stylelint and automatically fixes issues.
+
+   ```bash
+   stylelint --fix --allow-empty-input "**/*.{css,scss}" && echo 'StyleLint Finished'
+   ```
+
+7. **check**: Runs the format, ESLint, and Stylelint checks in sequence.
+
+   ```bash
+   npm run format && npm run lint:es && npm run lint:style
+   ```
+
+8. **build:local**: Similar to the build command, but formats the code before building.
+   ```bash
+   prettier --write . && stylelint --allow-empty-input "**/*.{css,scss}" && next build
+   ```
