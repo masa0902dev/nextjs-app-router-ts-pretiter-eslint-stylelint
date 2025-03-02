@@ -5,9 +5,9 @@ The project is preconfigured with TypeScript, Prettier, ESLint, and Stylelint to
 
 ## formatter, linter
 
-Prettier: Automated code formatting.
-ESLint: Linting for ts, tsx files.
-Stylelint: Linting for css,scss,module.scss files.
+Prettier: Automated code formatting.  
+ESLint: Linting for ts, tsx files.  
+Stylelint: Linting for css,scss,module.scss files.  
 
 ## Installation
 
@@ -19,6 +19,11 @@ cd nextjs-app-router-ts-pretiter-eslint-stylelint
 
 npm install
 ```
+
+### create environment without `git clone`
+1. npx create-next-app@latest
+2. copy and paste package.json, config files (prettier,eslint,stylelint,.vscode)
+3. npm install (or, npm ci)
 
 ## npm Scripts
 
@@ -70,3 +75,4 @@ This project includes the following npm scripts:
    ```bash
    prettier --write . && stylelint --allow-empty-input "**/*.{css,scss}" && next build
    ```
+
